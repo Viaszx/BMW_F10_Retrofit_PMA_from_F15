@@ -25,15 +25,13 @@ To use two hardware CAN buses on STM32F107 it is necessary to pay attention to t
 For STM32F103 controller `startup_stm32f10x_md.c` was used.
 
 To set the CAN bus speed it is necessary to consider the clock frequency of the STM32 controller and set the appropriate parameters. 
-**CAN_SJW (Synchronization Jump Width):**
-Specifies the width of the jump for synchronization.
-In this case, the value is set to `CAN_SJW_1tq`, indicating that the synchronization jump is 1 time quantum.
-**CAN_BS1 (Bit Segment 1):**
-Determines the duration of the first bit segment.
-Here, the value is set to `CAN_BS1_3tq`, meaning that the first bit segment consists of 3 time quanta.
-**CAN_BS2 (Bit Segment 2):**
-Defines the duration of the second bit segment.
-In this case, the value is set to `CAN_BS2_4tq`, signifying that the second bit segment comprises 4 time quanta.
+
+| Parameter                                   | Description                                                                                   |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **CAN_SJW (Synchronization Jump Width)**    | Specifies the width of the jump for synchronization. In this case, the value is set to `CAN_SJW_1tq`, indicating that the synchronization jump is 1 time quantum. |
+| **CAN_BS1 (Bit Segment 1)**                  | Determines the duration of the first bit segment. Here, the value is set to `CAN_BS1_3tq`, meaning that the first bit segment consists of 3 time quanta. |
+| **CAN_BS2 (Bit Segment 2)**                  | Defines the duration of the second bit segment. In this case, the value is set to `CAN_BS2_4tq`, signifying that the second bit segment comprises 4 time quanta. |
+
 
 _These parameters define the timing characteristics of the bit segment in the CAN bus. Bit Timing configuration is a crucial part of setting up the CAN controller and depends on the characteristics of the CAN network, such as data transmission speed and network length. Properly configuring these parameters ensures accurate synchronization and communication on the CAN network._
 
